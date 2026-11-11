@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en" oncontextmenu="return false">
+	<head>
+		<link
+			href="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+			rel="icon"
+		/>
+		<meta charset="UTF-8" />
+		<meta
+			content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+			name="viewport"
+		/>
+		<title>&zwj;</title>
+		<style>
+			@font-face {
+				font-family: 'Main';
+				src: url('https://fonts.gstatic.com/s/antonsc/v1/4UaBrEBBsgltGn71syLhx6g.woff2');
+			}
+
+			:root {
+				--bg: Black;
+				--fg: Burlywood;
+				background: var(--bg);
+				color: WhiteSmoke;
+				font-family: 'Main', sans-serif;
+				font-size: 3vmax;
+				height: 100%;
+				scrollbar-color: var(--fg) var(--bg);
+				text-transform: uppercase;
+				user-select: none;
+				-webkit-tap-highlight-color: transparent;
+			}
+
+			body {
+				box-sizing: border-box;
+				height: 100%;
+				margin: 0;
+				padding: 1vmax;
+			}
+
+			.flex {
+				display: flex;
+				flex-direction: column;
+				gap: 0.5vmax;
+			}
+
+			.flex-center {
+				align-items: center;
+				justify-content: center;
+			}
+
+			.flex-end {
+				align-items: flex-end;
+				justify-content: flex-end;
+			}
+
+			.flex-fill {
+				flex: 1;
+			}
+
+			.flex-row {
+				flex-direction: row;
+			}
+
+			.hid {
+				display: none;
+			}
+
+			.lcars-block-e {
+				height: 100%;
+				overflow: hidden;
+			}
+
+			.lcars-block-e::after {
+				background: var(--fg);
+				content: '';
+				display: block;
+				height: 100%;
+				margin-left: 1.25vmax;
+				width: 1.25vmax;
+			}
+
+			.lcars-block-n {
+				background: var(--fg);
+				height: 5vmax;
+				min-width: 2.5vmax;
+				overflow: hidden;
+			}
+
+			.lcars-block-n::after {
+				background: var(--bg);
+				content: '';
+				display: block;
+				height: 1.25vmax;
+				margin-top: 3.75vmax;
+			}
+
+			.lcars-block-s {
+				background: var(--fg);
+				height: 5vmax;
+				min-width: 2.5vmax;
+				overflow: hidden;
+			}
+
+			.lcars-block-s::after {
+				background: var(--bg);
+				content: '';
+				display: block;
+				height: 1.25vmax;
+			}
+
+			.lcars-block-w {
+				height: 100%;
+				overflow: hidden;
+			}
+
+			.lcars-block-w::after {
+				background: var(--fg);
+				content: '';
+				display: block;
+				height: 100%;
+				margin-right: 1.25vmax;
+				width: 1.25vmax;
+			}
+
+			.lcars-button {
+				background: var(--fg);
+				color: var(--bg);
+				cursor: pointer;
+				padding: 0 2ch 0 1ch;
+				text-align: center;
+			}
+
+			.lcars-button:hover {
+				background: NavajoWhite;
+			}
+
+			.lcars-button:active {
+				background: AntiqueWhite;
+			}
+
+			.lcars-button:first-child {
+				border-radius: 2.5vmax 0 0 2.5vmax;
+			}
+
+			.lcars-button:last-child {
+				border-radius: 0 2.5vmax 2.5vmax 0;
+			}
+
+			.lcars-elbow-ne {
+				background: var(--fg);
+				border-radius: 0 2.5vmax 0 0;
+				height: 5vmax;
+				overflow: hidden;
+				min-width: 5vmax;
+			}
+
+			.lcars-elbow-ne::after {
+				background: var(--bg);
+				border-radius: 0 1.25vmax 0 0;
+				content: '';
+				display: block;
+				height: 1.25vmax;
+				margin-right: 1.25vmax;
+				margin-top: 3.75vmax;
+			}
+
+			.lcars-elbow-nw {
+				background: var(--fg);
+				border-radius: 2.5vmax 0 0 0;
+				height: 5vmax;
+				overflow: hidden;
+				min-width: 5vmax;
+			}
+
+			.lcars-elbow-nw::after {
+				background: var(--bg);
+				border-radius: 1.25vmax 0 0 0;
+				content: '';
+				display: block;
+				height: 1.25vmax;
+				margin-left: 1.25vmax;
+				margin-top: 3.75vmax;
+			}
+
+			.lcars-elbow-se {
+				background: var(--fg);
+				border-radius: 0 0 2.5vmax 0;
+				height: 5vmax;
+				overflow: hidden;
+				min-width: 5vmax;
+			}
+
+			.lcars-elbow-se::after {
+				background: var(--bg);
+				border-radius: 0 0 1.25vmax 0;
+				content: '';
+				display: block;
+				height: 1.25vmax;
+				margin-right: 1.25vmax;
+			}
+
+			.lcars-elbow-sw {
+				background: var(--fg);
+				border-radius: 0 0 0 2.5vmax;
+				height: 5vmax;
+				overflow: hidden;
+				min-width: 5vmax;
+			}
+
+			.lcars-elbow-sw::after {
+				background: var(--bg);
+				border-radius: 0 0 0 1.25vmax;
+				content: '';
+				display: block;
+				height: 1.25vmax;
+				margin-left: 1.25vmax;
+			}
+
+			.lcars-head-n {
+				font-size: 4vmax;
+				height: 5vmax;
+				line-height: 100%;
+				margin-left: 0.5vmax;
+				margin-right: 0.5vmax;
+				white-space: nowrap;
+			}
+
+			.lcars-icon {
+				float: left;
+				margin-right: 2.5vmax;
+				width: 16vmax;
+			}
+
+			.lcars-text {
+				color: LightSkyBlue;
+				text-align: justify;
+			}
+
+			#acknowledge {
+				margin: 1rem 0 1rem 0;
+			}
+		</style>
+	</head>
+	<body class="flex">
+		<span class="flex flex-row">
+			<div class="lcars-elbow-nw"></div>
+			<div class="flex-fill lcars-block-n"></div>
+			<div class="lcars-head-n">Comm</div>
+			<div class="lcars-block-n"></div>
+			<div class="lcars-elbow-ne"></div>
+		</span>
+		<span class="flex flex-fill flex-row" style="min-height: 0">
+			<div class="lcars-block-w"></div>
+			<div class="flex flex-fill" style="min-height: 0; overflow: scroll">
+				<div class="lcars-text" id="typewriter">
+					<img class="lcars-icon" src="ufp2.jpg" />
+					<span id="text-content"></span>
+				</div>
+				<div class="flex-fill"></div>
+				<div class="hid" id="acknowledge">
+					<div class="flex flex-center flex-row">
+						<div class="lcars-button">&nbsp;</div>
+						<div class="lcars-button">Acknowledge</div>
+					</div>
+				</div>
+				<div class="flex-fill"></div>
+			</div>
+			<div class="lcars-block-e"></div>
+		</span>
+		<span class="flex flex-row">
+			<div class="lcars-elbow-sw"></div>
+			<div class="flex-fill lcars-block-s"></div>
+			<div class="lcars-elbow-se"></div>
+		</span>
+		<script>
+			const acknowledge = document.getElementById('acknowledge')
+			const target = document.getElementById('text-content')
+			const scrollContainer = target.closest('.flex')
+			let i = 0
+			let message = ''
+
+			function type() {
+				if (i < message.length) {
+					const ichar = message.charAt(i)
+					target.textContent += ichar
+					i++
+					if (ichar === '.') {
+						setTimeout(type, 750)
+					} else {
+						setTimeout(type, 100)
+					}
+				} else {
+					setTimeout( () => {
+						acknowledge.classList.toggle('hid')
+						scrollContainer.scrollTop = scrollContainer.scrollHeight
+					}, 500)
+				}
+				scrollContainer.scrollTop = scrollContainer.scrollHeight
+			}
+
+			async function loadMessage() {
+				try {
+					const query_params = new URLSearchParams(window.location.search)
+					const officer_id = query_params.get('officer_id')
+					if (!officer_id) throw new Error('No officer_id provided')
+					const response = await fetch(officer_id + '.txt')
+					message = await response.text()
+					type()
+				} catch (err) {
+					console.error(`Error loading:`, err)
+					target.textContent = 'ERROR: COMMUNICATION LINK LOST'
+				}
+			}
+
+			acknowledge.addEventListener('click', () => {
+				window.open(
+					'mailto:angus@starsca.de?subject=BUREAU_OF_MARITAL_AFFAIRS&body=YOUR_RESPONSE:',
+					'_blank'
+				)
+			})
+
+			window.onload = loadMessage
+		</script>
+	</body>
+</html>
