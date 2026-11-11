@@ -275,6 +275,9 @@
 		</span>
 		<script>
 			const acknowledge = document.getElementById('acknowledge')
+			const query_params = new URLSearchParams(window.location.search)
+			const email_address = query_params.get('to')
+			const officer_id = query_params.get('id')
 			const target = document.getElementById('text-content')
 			const scrollContainer = target.closest('.flex')
 			let i = 0
@@ -301,21 +304,19 @@
 
 			async function loadMessage() {
 				try {
-					const query_params = new URLSearchParams(window.location.search)
-					const officer_id = query_params.get('officer_id')
-					if (!officer_id) throw new Error('No officer_id provided')
+					if (!officer_id) throw new Error('No id provided')
 					const response = await fetch(officer_id + '.txt')
 					message = await response.text()
 					type()
 				} catch (err) {
 					console.error(`Error loading:`, err)
-					target.textContent = 'ERROR: COMMUNICATION LINK LOST'
+					target.textContent = 'ERROR: UNAUTHORIZED'
 				}
 			}
 
 			acknowledge.addEventListener('click', () => {
 				window.open(
-					'mailto:angus@starsca.de?subject=BUREAU_OF_MARITAL_AFFAIRS&body=YOUR_RESPONSE:',
+					`mailto:${email_address}?subject=Re: Away Team&body=Bureau of Marital Affairs,`,
 					'_blank',
 				)
 			})
