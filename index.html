@@ -291,7 +291,7 @@
 						setTimeout(type, 100)
 					}
 				} else {
-					setTimeout( () => {
+					setTimeout(() => {
 						acknowledge.classList.toggle('hid')
 						scrollContainer.scrollTop = scrollContainer.scrollHeight
 					}, 500)
@@ -316,7 +316,7 @@
 			acknowledge.addEventListener('click', () => {
 				window.open(
 					'mailto:angus@starsca.de?subject=BUREAU_OF_MARITAL_AFFAIRS&body=YOUR_RESPONSE:',
-					'_blank'
+					'_blank',
 				)
 			})
 
