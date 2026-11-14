@@ -23,6 +23,36 @@
 				}
 			}
 
+			@keyframes flicker {
+				0% {
+					opacity: 0;
+				}
+				5% {
+					opacity: 0.5;
+				}
+				10% {
+					opacity: 0.2;
+				}
+				15% {
+					opacity: 0.3;
+				}
+				20% {
+					opacity: 0.6;
+				}
+				25% {
+					opacity: 1;
+				}
+				30% {
+					opacity: 0.8;
+				}
+				35% {
+					opacity: 1;
+				}
+				100% {
+					opacity: 1;
+				}
+			}
+
 			:root {
 				--bg: Black;
 				--fg: Burlywood;
@@ -73,7 +103,7 @@
 			}
 
 			.lcars-block-e {
-				animation: fade 3s;
+				animation: flicker 3s;
 				height: 100%;
 				overflow: hidden;
 			}
@@ -88,7 +118,7 @@
 			}
 
 			.lcars-block-n {
-				animation: fade 2s;
+				animation: flicker 2s;
 				background: var(--fg);
 				height: 5vmax;
 				min-width: 2.5vmax;
@@ -104,7 +134,7 @@
 			}
 
 			.lcars-block-s {
-				animation: fade 2s;
+				animation: flicker 2s;
 				background: var(--fg);
 				height: 5vmax;
 				min-width: 2.5vmax;
@@ -119,7 +149,7 @@
 			}
 
 			.lcars-block-w {
-				animation: fade 2s;
+				animation: flicker 2s;
 				height: 100%;
 				overflow: hidden;
 			}
@@ -158,7 +188,7 @@
 			}
 
 			.lcars-elbow-ne {
-				animation: fade 3s;
+				animation: flicker 3s;
 				background: var(--fg);
 				border-radius: 0 2.5vmax 0 0;
 				height: 5vmax;
@@ -177,7 +207,7 @@
 			}
 
 			.lcars-elbow-nw {
-				animation: fade 3s;
+				animation: flicker 3s;
 				background: var(--fg);
 				border-radius: 2.5vmax 0 0 0;
 				height: 5vmax;
@@ -196,7 +226,7 @@
 			}
 
 			.lcars-elbow-se {
-				animation: fade 2s;
+				animation: flicker 2s;
 				background: var(--fg);
 				border-radius: 0 0 2.5vmax 0;
 				height: 5vmax;
@@ -214,7 +244,7 @@
 			}
 
 			.lcars-elbow-sw {
-				animation: fade 2s;
+				animation: flicker 2s;
 				background: var(--fg);
 				border-radius: 0 0 0 2.5vmax;
 				height: 5vmax;
@@ -232,7 +262,7 @@
 			}
 
 			.lcars-head-n {
-				animation: fade 3s;
+				animation: flicker 3s;
 				font-size: 4vmax;
 				height: 5vmax;
 				line-height: 100%;
@@ -242,7 +272,7 @@
 			}
 
 			.lcars-icon {
-				animation: fade 1s;
+				animation: fade 2s;
 				float: left;
 				margin-right: 2.5vmax;
 				width: 16vmax;
