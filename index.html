@@ -326,8 +326,8 @@
 		<script>
 			const acknowledge = document.getElementById('acknowledge')
 			const query_params = new URLSearchParams(window.location.search)
-			const email_address = query_params.get('comm')
-			const officer_id = query_params.get('officer')
+			const phone_number = query_params.get('sms')
+			const txt_uuid = query_params.get('txt')
 			const target = document.getElementById('text-content')
 			const scrollContainer = target.closest('.flex')
 			let i = 0
@@ -356,8 +356,8 @@
 
 			async function loadMessage() {
 				try {
-					if (!officer_id) throw new Error('No id provided')
-					const response = await fetch(officer_id + '.txt')
+					if (!txt_uuid) throw new Error('No id provided')
+					const response = await fetch(txt_uuid + '.txt')
 					message = await response.text()
 					type()
 				} catch (err) {
@@ -367,7 +367,7 @@
 			}
 
 			acknowledge.addEventListener('click', () => {
-				window.open(`sms:+1${email_address}`, '_blank')
+				window.open(`sms:+1${phone_number}`, '_blank')
 			})
 
 			window.onload = loadMessage
